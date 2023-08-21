@@ -9,4 +9,4 @@ This document explains the process of building a URL shortener tool using AWS cl
 ## Procedure:
 1. Create an S3 bucket. While creating the bucket, disable the **Block Public Access** option and enable ACLs. After the bucket is created, go to properties, click on **Edit Static Website Hosting**, enable and choose the hosting type as **Host a Static Website**. Specify the index document as index.html and save the changes.
 2. Now, create a cloudfront distribution with the above created S3 bucket as origin. Here, we create cloudfront distribution to avoid CORS configuration and have a readable domain name.
-3. Now, create an AWS lambda function with python as runtime and insert the url_shortener.py file uploaded in this repository.
+3. Now, create an AWS lambda function with python as runtime and insert the url_shortener.py file uploaded in this repository. Also, create an empty file in the same directory with name *empty_file* and make sure that the lambda IAM role has permissions to upload this empty file to S3.
